@@ -10,20 +10,26 @@
 }
 
 body {
-    background: #f4f7fb; /* LIGHT background */
-    color: #111827;      /* Dark text */
+    background: #f4f7fb;
+    color: #111827;
 }
 
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 18px 60px;
     background: white;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .nav-links {
@@ -43,7 +49,7 @@ body {
     color: #4f46e5;
 }
 
-/* HOME */
+/* HOME SECTION */
 .home {
     height: 80vh;
     display: flex;
@@ -51,6 +57,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .home h1 {
@@ -64,7 +71,7 @@ body {
 
 .subtitle {
     margin-top: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #4b5563;
 }
 
@@ -83,18 +90,18 @@ body {
     background: #4338ca;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
     padding: 60px 70px;
 }
 
 .title {
     font-size: 2rem;
-    margin-bottom: 25px;
     color: #4f46e5;
+    margin-bottom: 25px;
 }
 
-/* CARDS GRID */
+/* GRID CARDS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -105,14 +112,13 @@ body {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     border-left: 4px solid #6366f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 /* LISTS */
@@ -121,12 +127,12 @@ body {
     font-size: 1rem;
 }
 
-/* SOCIALS */
+/* SOCIAL LINKS */
 .socials a {
-    margin-right: 20px;
+    margin-right: 18px;
+    text-decoration: none;
     color: #4f46e5;
     font-weight: 600;
-    text-decoration: none;
 }
 
 /* FOOTER */
@@ -137,7 +143,7 @@ footer {
     background: white;
 }
 
-/* SCROLL REVEAL */
+/* ANIMATION */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -147,4 +153,68 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0px);
+}
+
+/* ----------------------------------------------- */
+/*  RESPONSIVE FIXES FOR TABLETS AND MOBILES      */
+/* ----------------------------------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .home h1 {
+        font-size: 2.4rem;
+    }
+
+    .section {
+        padding: 40px 40px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 600px) {
+
+    /* NAVBAR collapses properly */
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;   /* hide desktop navbar */
+    }
+
+    /* HOME responsive text */
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .home .subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Section spacing */
+    .section {
+        padding: 35px 20px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    /* Card padding */
+    .card {
+        padding: 16px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
